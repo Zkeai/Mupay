@@ -1,31 +1,37 @@
 edition: 3.0.0
-name: mupay
+name: Mupay
 access: "mac"
 vars:
-  region: "cn-hongkong" # 地区
-  functionName: "mupay" # 函数名称
-
+  region: "cn-hongkong" #地区
+  functionName: "Mupay" #函数名字
 resources:
   framework:
     component: fc3
     actions:
       pre-deploy:
-        - run: npm install
+        - run: export PATH=/usr/local/versions/node/v20.8.1/bin:$PATH && npm install
           path: ./
-        - run: npm run build
+        - run: export PATH=/usr/local/versions/node/v20.8.1/bin:$PATH && npm run build
           path: ./
 
     props:
       region: ${vars.region}
       description: Serverless Devs Web Framework Function
-      runtime: debian10
+      runtime: custom.debian10 #环境版本
       timeout: 60
       functionName: ${vars.functionName}
-      code: ./ # 函数代码目录
-      environmentVariables:
-        PORT: 3000 # 设置端口号为 3000
+      code: ./
       customRuntimeConfig:
-        command: npm run start # 自定义命令，运行 npm start
+        command:
+          - npm
+          - run
+          - start
+        port: 3000
+      environmentVariables: #环境变量
+        PATH: /opt/nodejs20/bin:/usr/local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/opt/bin
+      layers:
+        - acs:fc:${vars.region}:official:layers/Nodejs20/versions/1
+
       triggers:
         - triggerName: httpTrigger
           triggerType: http
@@ -35,3 +41,13 @@ resources:
               - GET
               - POST
             disableURLInternet: false
+  fc3_domain_0:
+    component: fc3-domain
+    props:
+      region: ${vars.region}
+      domainName: auto
+      protocol: HTTP
+      routeConfig:
+        routes:
+          - path: /*
+            functionName: ${vars.functionName}
