@@ -25,5 +25,5 @@ jobs:
           ACCESS_KEY_SECRET: ${{ secrets.ALIYUN_ACCESS_KEY_SECRET }}
         run: |
           npm install -g @serverless-devs/s
-          s config add --AccountID ${{ secrets.ACCOUNT_ID }} --AccessKeyID ${{ secrets.ALIYUN_ACCESS_KEY_ID }} --AccessKeySecret ${{ secrets.ALIYUN_ACCESS_KEY_SECRET }} --alias default
+          s config add --AccountID ${{ secrets.ACCOUNT_ID }} --AccessKeyID ${{ secrets.ALIYUN_ACCESS_KEY_ID }} --AccessKeySecret ${{ secrets.ALIYUN_ACCESS_KEY_SECRET }}
           s deploy
