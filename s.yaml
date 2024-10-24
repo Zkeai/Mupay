@@ -1,24 +1,32 @@
 edition: 3.0.0
-name: Mupay
+name: mupay
 access: "mac"
-
+vars:
+  region: "cn-hongkong" #地区
+  functionName: "mupay" #函数名字
 resources:
-  nextjsApp:
+  framework:
     component: fc3
+    actions:
+      pre-deploy:
+        - run: npm install
+          path: ./code
+        - run: npm run build
+          path: ./code
+
     props:
-      region: cn-hongkong
-      service:
-        name: nextjs-service
-        internetAccess: true
-      function:
-        name: nextjs-function
-        runtime: nodejs18
-        handler: server.handler # 指向 server.js 中的 handler
-        memorySize: 512
-        timeout: 60
-        codeUri: ./.next/standalone # 使用 standalone 输出目录
-      environmentVariables:
-        NODE_ENV: production
-      preDeploy:
-        - npm install # Install dependencies before deploying
-        - npm run build # Build your Next.js app before deploying
+      region: ${vars.region}
+      description: Serverless Devs Web Framework Function
+      runtime: nodejs20 #环境版本
+      timeout: 60
+      functionName: ${vars.functionName}
+      code: ./code
+      triggers:
+        - triggerName: httpTrigger
+          triggerType: http
+          triggerConfig:
+            authType: anonymous
+            methods:
+              - GET
+              - POST
+            disableURLInternet: false
