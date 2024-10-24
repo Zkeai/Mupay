@@ -10,9 +10,9 @@ resources:
     actions:
       pre-deploy:
         - run: npm install
-          path: ./code
+          path: ./
         - run: npm run build
-          path: ./code
+          path: ./
 
     props:
       region: ${vars.region}
@@ -20,7 +20,7 @@ resources:
       runtime: nodejs20 #环境版本
       timeout: 60
       functionName: ${vars.functionName}
-      code: ./code
+      code: ./
       triggers:
         - triggerName: httpTrigger
           triggerType: http
