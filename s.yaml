@@ -1,0 +1,21 @@
+edition: 1.0.0
+name: nextjs-fc-app
+access: default
+
+services:
+  nextjsApp:
+    component: devsapp/fc
+    props:
+      region: cn-hangzhou
+      service:
+        name: nextjs-service
+        internetAccess: true
+      function:
+        name: nextjs-function
+        runtime: nodejs18
+        handler: index.handler
+        memorySize: 512
+        timeout: 60
+        codeUri: ./ # 指向构建后的代码目录
+      environmentVariables:
+        NODE_ENV: production
