@@ -1,12 +1,12 @@
-edition: 1.0.0
-name: nextjs-fc-app
-access: default
+edition: 3.0.0
+name: Mupay
+access: "mac"
 
 services:
   nextjsApp:
-    component: devsapp/fc
+    component: fc3
     props:
-      region: cn-hangzhou
+      region: cn-hongkong
       service:
         name: nextjs-service
         internetAccess: true
