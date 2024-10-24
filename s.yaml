@@ -2,8 +2,9 @@ edition: 3.0.0
 name: mupay
 access: "mac"
 vars:
-  region: "cn-hongkong" #地区
-  functionName: "mupay" #函数名字
+  region: "cn-hongkong" # 地区
+  functionName: "mupay" # 函数名称
+
 resources:
   framework:
     component: fc3
@@ -17,10 +18,14 @@ resources:
     props:
       region: ${vars.region}
       description: Serverless Devs Web Framework Function
-      runtime: nodejs20 #环境版本
+      runtime: debian10
       timeout: 60
       functionName: ${vars.functionName}
-      code: ./
+      code: ./ # 函数代码目录
+      environmentVariables:
+        PORT: 3000 # 设置端口号为 3000
+      customRuntimeConfig:
+        command: npm run start # 自定义命令，运行 npm start
       triggers:
         - triggerName: httpTrigger
           triggerType: http
