@@ -3,7 +3,7 @@ name: Deploy Next.js App to Aliyun FC 3.0.0
 on:
   push:
     branches:
-      - master
+      - main
 
 jobs:
   deploy:
