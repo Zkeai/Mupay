@@ -2,7 +2,7 @@ edition: 3.0.0
 name: Mupay
 access: "mac"
 
-services:
+resources:
   nextjsApp:
     component: fc3
     props:
