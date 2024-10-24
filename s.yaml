@@ -19,3 +19,6 @@ services:
         codeUri: ./.next/standalone # 使用 standalone 输出目录
       environmentVariables:
         NODE_ENV: production
+      preDeploy:
+        - npm install # Install dependencies before deploying
+        - npm run build # Build your Next.js app before deploying
