@@ -13,9 +13,9 @@ services:
       function:
         name: nextjs-function
         runtime: nodejs18
-        handler: index.handler
+        handler: server.handler # 指向 server.js 中的 handler
         memorySize: 512
         timeout: 60
-        codeUri: ./ # 指向构建后的代码目录
+        codeUri: ./.next/standalone # 使用 standalone 输出目录
       environmentVariables:
         NODE_ENV: production
