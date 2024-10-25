@@ -1,0 +1,31 @@
+{
+  "T": "模块",
+  "item": [
+    {
+      "name": "head",
+      "item": [
+        {
+          "name": "订单",
+          "item": [
+            {
+              "name": "查询订单",
+              "icon": "icon-ceshiwangluozi",
+              "path": "/dashboard/drop/newland"
+            }
+          ]
+        },
+        {
+          "name": "后台",
+
+          "item": [
+            {
+              "name": "空投查询",
+              "icon": "icon-kongtou",
+              "item": []
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

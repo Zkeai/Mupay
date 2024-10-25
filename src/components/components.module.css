@@ -1,0 +1,100 @@
+.headLeftIcon {
+  fill: black;
+  transition: fill 0.3s ease;
+}
+
+.headLeftIcon:hover {
+  fill: rgb(245 158 10);
+  cursor: pointer;
+}
+
+.title {
+  @apply flex font-bold items-center transition-all duration-300;
+}
+
+@media (min-width: 430px) {
+  .title {
+    @apply ml-4 w-20;
+  }
+}
+
+@media (min-width: 1024px) {
+  .title {
+    @apply ml-10 w-64;
+  }
+}
+
+.title:hover {
+  cursor: pointer;
+}
+
+.title:hover .text {
+  background: rgb(245 158 10);
+  color: #ffffff;
+  border-radius: 0.5rem;
+  padding: 1px;
+}
+
+.title {
+  @apply text-teal-400 text-2xl;
+}
+
+@media (max-width: 1023px) {
+  .title {
+    @apply hidden;
+  }
+}
+
+.social {
+  cursor: pointer;
+}
+
+.social:hover {
+  fill: white;
+}
+
+/* TabButton */
+.tabBt {
+  position: relative;
+  padding: 3px 15px 3px 15px;
+  background-color: white;
+  cursor: pointer;
+  border: 1px solid #ddd;
+  transition: background-color 0.1s;
+}
+
+.tabBt:hover {
+  background-color: #f0f0f0;
+}
+
+.tabBt.active {
+  background-color: #42b983;
+  color: white;
+}
+
+.tabBt.noactive {
+  background-color: white;
+  color: black;
+}
+
+.circle {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  background-color: white;
+  border-radius: 50%;
+  margin-right: 8px;
+}
+
+.tab {
+  position: absolute;
+  fill: black;
+  top: 1px;
+  right: 1px;
+  cursor: pointer;
+}
+.tab:hover {
+  background-color: white;
+  fill: white;
+  border-radius: 50%;
+}
