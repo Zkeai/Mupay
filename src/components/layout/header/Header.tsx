@@ -15,7 +15,7 @@ interface SubMenuItem {
   path?: string;
   click?: boolean;
   icon?: string;
-  item: SubMenuItem[];
+  item?: SubMenuItem[];
 }
 
 interface MenuItem {
@@ -23,7 +23,7 @@ interface MenuItem {
   path?: string;
   click?: boolean;
   icon?: string;
-  item: SubMenuItem[];
+  item?: SubMenuItem[];
 }
 
 const Header: React.FC = () => {
