@@ -8,13 +8,13 @@
     "head": "head",
     "订单": "Orders",
     "后台": "Admin",
-    "订单查询": "Order Search",
-    "店铺管理": "Store Management",
+    "订单查询": "Order",
+    "店铺管理": "Shop",
     "Login": "Login",
     "defaultName": "SHOP"
   },
   "LocaleSwitcher": {
     "label": "Change language",
-    "locale": "{locale, select, zh_cn {🇨🇳 Chinese} en {🇺🇸 English} other {Unknown}}"
+    "locale": "{locale, select, zh_cn {Chinese} en {English} other {Unknown}}"
   }
 }

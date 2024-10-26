@@ -4,7 +4,7 @@ export default function HomePage() {
   const t = useTranslations("HomePage");
   return (
     <div className="mt-16">
-      <h1>{t("title1")}</h1>
+      <h1>{t("title")}</h1>
     </div>
   );
 }

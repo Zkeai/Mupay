@@ -1,4 +1,4 @@
-import React, { SVGProps } from 'react';
+import React, { SVGProps, useEffect } from "react";
 
 interface IconProps extends SVGProps<SVGSVGElement> {
   type: string;
@@ -7,17 +7,25 @@ interface IconProps extends SVGProps<SVGSVGElement> {
   color?: string;
 }
 
-const Icon: React.FC<IconProps> = ({ className, type, size = 24, color="black", ...props }) => (
-  <svg
-    className={`${className} iconfont ${type}`}
-    aria-hidden="true"
-    width={size}
-    height={size}
-    fill={color}
-    {...props}
-  >
-    <use xlinkHref={`#${type}`} />
-  </svg>
-);
+const Icon: React.FC<IconProps> = ({
+  className,
+  type,
+  size = 24,
+  color = "black",
+  ...props
+}) => {
+  return (
+    <svg
+      className={`${className} iconfont ${type}`}
+      aria-hidden="true"
+      width={size}
+      height={size}
+      fill={color}
+      {...props}
+    >
+      <use xlinkHref={`#${type}`} />
+    </svg>
+  );
+};
 
 export default Icon;

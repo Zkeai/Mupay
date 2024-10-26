@@ -2,17 +2,23 @@
 "use client";
 
 //import { useBusinessConfig } from "@/hooks/useBusinessConfig";
+import { useEffect } from "react";
 import Header from "@/components/layout/header/Header";
 import { Providers } from "@/context/providers";
 import "@rainbow-me/rainbowkit/styles.css";
-import dynamic from "next/dynamic";
 
-// const Header = dynamic(() => import("@/components/layout/header/Header"), {
-//   ssr: false, // 如果希望只在客户端渲染
-// });
 export default function ClientComponent() {
   //const businessConfig = useBusinessConfig();
+  useEffect(() => {
+    const script = document.createElement("script");
+    script.src = "/js/iconfont.js";
+    script.defer = true;
+    document.body.appendChild(script);
 
+    return () => {
+      document.body.removeChild(script);
+    };
+  }, []);
   return (
     <>
       <Providers>

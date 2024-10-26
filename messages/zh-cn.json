@@ -15,6 +15,6 @@
   },
   "LocaleSwitcher": {
     "label": "修改语言",
-    "locale": "{locale, select, zh_cn {🇨🇳 中文} en {🇺🇸 英语} other {其他}}"
+    "locale": "{locale, select, zh_cn {中文} en {英语} other {其他}}"
   }
 }

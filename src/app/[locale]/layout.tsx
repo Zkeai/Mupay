@@ -33,9 +33,6 @@ export default async function RootLayout({
 
   return (
     <html lang={locale}>
-      <head>
-        <script defer={true} src="/js/iconfont.js" />
-      </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
