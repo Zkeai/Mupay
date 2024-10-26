@@ -5,9 +5,16 @@
     "blog1": "Blog1"
   },
   "head": {
+    "head": "head",
     "订单": "Orders",
     "后台": "Admin",
-    "查询订单": "Order Search",
-    "空投查询": "Airdrop Search"
+    "订单查询": "Order Search",
+    "店铺管理": "Store Management",
+    "Login": "Login",
+    "defaultName": "SHOP"
+  },
+  "LocaleSwitcher": {
+    "label": "Change language",
+    "locale": "{locale, select, zh_cn {🇨🇳 Chinese} en {🇺🇸 English} other {Unknown}}"
   }
 }

@@ -98,3 +98,7 @@
   fill: white;
   border-radius: 50%;
 }
+
+.mode:hover {
+  cursor: pointer;
+}
